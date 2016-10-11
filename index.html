@@ -6,9 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
 </head>
 <body>
-	<h1 class="center-align">Calcula IMC</h1>
-	<div>
-		<table class="responsive-table highlight card">
+	<nav class="light-purple lighten-5" role="navigation">
+    	<div class="nav-wrapper container">
+    		<a id="logo-container" href="#" class="brand-logo">Calcula IMC</a>
+		</div>
+  	</nav>
+	<div class="container">
+		<table class="responsive-table highlight center-align">
 			<thead>
 				<tr>
 					<th>Paciente</th>
@@ -36,10 +40,18 @@
 					<td class="peso">40</td>
 					<td class="imc"></td>
 				</tr>
+				<tr class="paciente">
+					<td class="nomePaciente">Markshel</td>
+					<td class="altura">1.60</td>
+					<td class="peso">40</td>
+					<td class="imc"></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
 	<script type="text/javascript" src="js/materialize.js"></script>
-	<script type="text/javascript" src="js/calcula-imc.js"></script>
+	<script type="text/javascript" src="js/percorre.js"></script>
+	<script type="text/javascript" src="js/calcula-imc-3.js"></script>
+	<!-- <script type="text/javascript" src="js/imprime.js"></script> -->
 </body>
 </html>
