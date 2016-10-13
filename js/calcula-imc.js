@@ -10,21 +10,33 @@ function calculaImc(){
 	}
 }
 
-var trsPaciente = document.getElementsByClassName("paciente");
-for (var i = 0; (trsPaciente.length - 1) >= i; i++) {
-	
-	var tdPaciente 	= trsPaciente[i].getElementsByClassName("nomePaciente")[0];
-	var tdAltura 	= trsPaciente[i].getElementsByClassName("altura")[0];
-	var tdPeso 		= trsPaciente[i].getElementsByClassName("peso")[0];
+function calcularTodosImcs(){
 
-	var paciente = {
-		nome : tdPaciente.textContent,
-		altura : tdAltura.textContent,
-		peso : tdPeso.textContent,
-		pegaImcDoPaciente : calculaImc
+	var trsPaciente = document.getElementsByClassName("paciente");
+	for (var i = 0; (trsPaciente.length - 1) >= i; i++) {
+		
+		var tdPaciente 	= trsPaciente[i].getElementsByClassName("nomePaciente")[0];
+		var tdAltura 	= trsPaciente[i].getElementsByClassName("altura")[0];
+		var tdPeso 		= trsPaciente[i].getElementsByClassName("peso")[0];
+
+		var paciente = {
+			nome : tdPaciente.textContent,
+			altura : tdAltura.textContent,
+			peso : tdPeso.textContent,
+			pegaImcDoPaciente : calculaImc
+		}
+
+		console.log(paciente);
+		var imc = paciente.pegaImcDoPaciente();
+		trsPaciente[i].getElementsByClassName("imc")[0].textContent = imc;
 	}
 
-	console.log(paciente);
-	var imc = paciente.pegaImcDoPaciente();
-	trsPaciente[i].getElementsByClassName("imc")[0].textContent = imc;
+}
+
+
+window.onload = function(){
+	var botao = document.getElementById("btnCalcularImc");
+	/*botao.onclick = calcularTodosImcs;*/
+	botao.addEventListener("click", calcularTodosImcs);
+
 }
